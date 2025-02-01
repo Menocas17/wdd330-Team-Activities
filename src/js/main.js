@@ -3,4 +3,4 @@ import ProductListing from "./ProductList.mjs";
 
 const dataSource = new ProductData('tents');
 
-const 
+const listing = new ProductListing('tents', dataSource, )
