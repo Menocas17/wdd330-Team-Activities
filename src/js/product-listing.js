@@ -1,9 +1,13 @@
+
+import { loadHeaderFooter, getParams } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
-import ProductListing from "./ProductList.mjs";
+import ProductList from "./ProductList.mjs";
 
-
-const dataSource = new ProductData('tents');
-const element = document.querySelector('.product-list')
-const listing = new ProductListing('tents', dataSource, element);
+loadHeaderFooter();
+const category = getParams("category");
+console.log(category)
+const dataSource = new ProductData();
+const element = document.querySelector(".product-list");
+const listing = new ProductList(category, dataSource, element);
 
 listing.init();
