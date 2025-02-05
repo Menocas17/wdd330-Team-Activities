@@ -1,4 +1,5 @@
-import { setLocalStorage } from "./utils.mjs";
+import { setLocalStorage, updateItemsCounter} from "./utils.mjs";
+
 
 
 function productDetailsTemplate(product) {
@@ -42,7 +43,9 @@ export default class ProductDetails {
 
         addToCart() {
             setLocalStorage("so-cart", this.product);
+            updateItemsCounter();            
           }
+
           renderProductDetails(selector) {
             const element = document.querySelector(selector);
             element.insertAdjacentHTML(
