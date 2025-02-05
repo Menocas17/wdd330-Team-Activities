@@ -84,12 +84,11 @@ export const updateItemsCounter = () => {
   const superscriptCounter = document.querySelector('.super-text');
   const cart = JSON.parse(localStorage.getItem('so-cart')) || [];
   const itemCount = cart.length;
-  if (itemCount < 1) {
-    superscriptCounter.classList.add('hide');
-  } else {
+  if (itemCount >= 1) {
+    superscriptCounter.classList.remove('hide');
     superscriptCounter.textContent = itemCount;
     console.log(superscriptCounter.textContent)
-  }
+  } 
 }
 
 export async function loadHeaderFooter() {
