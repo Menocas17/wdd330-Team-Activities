@@ -1,3 +1,6 @@
+
+
+
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -77,6 +80,18 @@ async function loadTemplate(path) {
   return template;
 }
 
+export const updateItemsCounter = () => {
+  const superscriptCounter = document.querySelector('.super-text');
+  const cart = JSON.parse(localStorage.getItem('so-cart')) || [];
+  const itemCount = cart.length;
+  if (itemCount < 1) {
+    superscriptCounter.classList.add('hide');
+  } else {
+    superscriptCounter.textContent = itemCount;
+    console.log(superscriptCounter.textContent)
+  }
+}
+
 export async function loadHeaderFooter() {
   const headerTemplate = await loadTemplate("../partials/header.html");
   const headerElement = document.querySelector("#header");
@@ -85,4 +100,7 @@ export async function loadHeaderFooter() {
 
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
+
+  updateItemsCounter()
+  
 }

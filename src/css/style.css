@@ -103,11 +103,30 @@ button {
   text-align: center;
 }
 
+.cart a {
+  text-decoration: none;
+}
+
 .cart svg {
   width: 25px;
 }
 .cart:hover svg {
   fill: gray;
+}
+
+.super-text {
+  background-color: rgb(251, 118, 52);
+  padding: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 0px;
+}
+
+.super-text.hide {
+ display: none;
 }
 
 /* End cart icon styles */
