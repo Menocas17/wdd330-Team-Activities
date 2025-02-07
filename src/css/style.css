@@ -90,7 +90,30 @@ button {
   border: 0;
   font-size: var(--large-font);
   cursor: pointer;
+  transition: background-color .5s;
 }
+
+.link-button {
+  padding: 0.5em 2em;
+  background-color: var(--secondary-color);
+  color: white;
+  margin: auto;
+  display: inline-block;
+  border: 0;
+  font-size: var(--large-font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .5s;
+}
+
+.link-button:hover {
+  background-color: var(--dark-grey);
+}
+
+button:hover {
+  background-color: var(--dark-grey);
+}
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
@@ -182,6 +205,11 @@ button {
   list-style-type: none;
   padding: 0;
 }
+
+.product-list.cart {
+  flex-direction: column;
+  width: 80%;
+}
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
@@ -255,6 +283,77 @@ button {
   grid-column: 3;
 }
 
+.total-text {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.total-text.hide {
+  display: none;
+}
+
+.check-out {
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+/* checkout page styles  */
+.checkout-info {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(350px, 1fr)
+  );
+  gap: 20px;
+}
+
+.order-summary {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #ededed;
+}
+
+/* checkout form styles  */
+
+form {
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 20px;
+  
+}
+
+form fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+form legend {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 70%;
+  height: 30px;
+  padding: 10px;
+  font-size: 17px;
+  border-color: var(--__dChyWxpC1TxpMXs, #888c8c);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(15, 17, 17, .15) inset;
+  outline: 0;
+  position: relative;
+  margin: 5px 0 ;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -272,4 +371,10 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+@media (max-width: 765px) { 
+  .order-summary{
+    order: -1;
+  }
 }
