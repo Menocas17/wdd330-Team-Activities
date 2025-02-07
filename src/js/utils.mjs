@@ -103,3 +103,16 @@ export async function loadHeaderFooter() {
   updateItemsCounter()
   
 }
+
+// format the number to American Dolars
+
+export function FomartToDolars (amount) {
+  const formatAmount = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2
+  })
+
+  return formatAmount.format(amount)
+}

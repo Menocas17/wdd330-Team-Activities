@@ -40,3 +40,18 @@ export default class ShoppingCart {
     document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
   }
 }
+
+export function CalculateSubTotal () {
+const cartItems = getLocalStorage('so-cart')
+
+if (cartItems.length !== 0) {
+    
+    let amount = 0;
+
+    for (const item of cartItems){
+        amount += Number(item.FinalPrice)
+    }
+    
+    return amount;
+} 
+} 
