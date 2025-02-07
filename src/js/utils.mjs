@@ -87,7 +87,7 @@ export const updateItemsCounter = () => {
   if (itemCount >= 1) {
     superscriptCounter.classList.remove('hide');
     superscriptCounter.textContent = itemCount;
-    console.log(superscriptCounter.textContent)
+    // console.log(superscriptCounter.textContent)
   } 
 }
 

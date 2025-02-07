@@ -255,6 +255,15 @@ button {
   grid-column: 3;
 }
 
+.total-text {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.total-text.hide {
+  display: none;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
