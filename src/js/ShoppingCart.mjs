@@ -1,6 +1,7 @@
 import { getLocalStorage } from "./utils.mjs";
 
-function cartItemTemplate(item) {
+function cartItemTemplate(item, itemQuant) {
+
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
@@ -12,7 +13,7 @@ function cartItemTemplate(item) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: 1</p>
+  <p class="cart-card__quantity">qty: ${itemQuant}</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
 
@@ -26,7 +27,16 @@ export default class ShoppingCart {
   }
   renderCartContents() {
     const cartItems = getLocalStorage(this.key);
-    const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+    const itemQuant = cartItems.reduce(
+      (quantity, item) => {
+          quantity[item.Id] = (quantity[item.Id] || 0) + 1;
+          return quantity
+      }, {}
+    );
+    console.log (itemQuant)
+    const nonDuplicatesCart = cartItems.filter ((item, index, cart) => cart.findIndex(i => i.Id === item.Id) === index);
+    // console.log(nonDuplicatesCart);
+    const htmlItems = nonDuplicatesCart.map((item) => cartItemTemplate(item, itemQuant[item.Id]));
     document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
   }
 }
