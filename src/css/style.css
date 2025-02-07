@@ -90,7 +90,13 @@ button {
   border: 0;
   font-size: var(--large-font);
   cursor: pointer;
+  transition: background-color .5s;
 }
+
+button:hover {
+  background-color: var(--dark-grey);
+}
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
@@ -182,6 +188,11 @@ button {
   list-style-type: none;
   padding: 0;
 }
+
+.product-list.cart {
+  flex-direction: column;
+  width: 80%;
+}
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
@@ -258,10 +269,15 @@ button {
 .total-text {
   font-size: 25px;
   font-weight: bold;
+  margin-top: 50px;
 }
 
 .total-text.hide {
   display: none;
+}
+
+.check-out {
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 500px) {

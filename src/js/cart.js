@@ -8,11 +8,11 @@ cart.renderCartContents();
 
 
 const totalPrice = document.querySelector('#total-cost');
-
+const totalText = document.querySelector('.total-text');
 const cartItems = getLocalStorage('so-cart')
 
-if (cartItems.lenght !== 0) {
-    const totalText = document.querySelector('.total-text');
+if (cartItems.length !== 0) {
+    
     totalText.classList.remove('hide');
 
     let amount = 0;
@@ -29,5 +29,5 @@ if (cartItems.lenght !== 0) {
     })
 
     totalPrice.textContent = formatedAmount.format(amount)
-}
+} 
 
