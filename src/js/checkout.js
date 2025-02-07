@@ -20,7 +20,13 @@ chekcoutProcess.OrderSummary();
 document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
     e.preventDefault();
   
-    chekcoutProcess.checkout();
+    const myForm = document.forms["payment-form"];
+    const chk_status = myForm.checkValidity();
+    myForm.reportValidity();
+    if(chk_status){
+        chekcoutProcess.checkout();
+    }
+    
   });
 
 
