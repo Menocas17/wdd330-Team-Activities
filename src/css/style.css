@@ -297,6 +297,10 @@ button:hover {
   margin-bottom: 30px;
   margin-left: 20px;
 }
+
+.check-out.hide {
+  display: none;
+}
 /* checkout page styles  */
 .checkout-info {
   display: grid;
@@ -352,6 +356,22 @@ input {
   outline: 0;
   position: relative;
   margin: 5px 0 ;
+}
+
+.alert {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border: 2px solid #FB8D00;
+  margin-top: 20px;
+  
+}
+
+.congratulations {
+  text-align: center;
+  margin: 80px 0;
 }
 
 @media screen and (min-width: 500px) {

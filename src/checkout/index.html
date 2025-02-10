@@ -46,7 +46,7 @@
             <fieldset>
               <legend>Payment Information</legend>
               <label for="card">Credit Card Number</label>
-              <input type="tel" name="cardNumber" id="card" required>
+              <input type="tel" name="cardNumber" id="card" inputmode="numeric" pattern="\d{13,19}" maxlength="19" required>
               <label for="expdate">Expiration Date</label>
               <input type="text" name="expiration" id="expdate" required>
               <label for="code">Security Code</label>

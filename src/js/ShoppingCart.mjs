@@ -36,8 +36,12 @@ export default class ShoppingCart {
     console.log (itemQuant)
     const nonDuplicatesCart = cartItems.filter ((item, index, cart) => cart.findIndex(i => i.Id === item.Id) === index);
     // console.log(nonDuplicatesCart);
-    const htmlItems = nonDuplicatesCart.map((item) => cartItemTemplate(item, itemQuant[item.Id]));
-    document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
+
+    if (nonDuplicatesCart.length > 0 ) {
+      const htmlItems = nonDuplicatesCart.map((item) => cartItemTemplate(item, itemQuant[item.Id]));
+      document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
+    }
+    
   }
 }
 
